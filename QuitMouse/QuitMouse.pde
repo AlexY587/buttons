@@ -1,5 +1,6 @@
 //global variables
 float xbuttoncenter, ybuttoncenter,buttonheight, buttonwidth ;
+color red = #FF0808, blue = #0A08FF, resetButtonColour = #FFFFFF, buttonFill;
 //
 void setup() {
   size(500, 500);
@@ -15,6 +16,11 @@ void setup() {
 }//end setup
 //
 void draw() {
+  if (mouseX>xbuttoncenter && mouseX<xbuttoncenter+buttonwidth && mouseY>ybuttoncenter && mouseY<ybuttoncenter+buttonwidth) {
+    buttonFill = red;
+  } else {
+    buttonFill = blue;
+  } //endhoverover
   fill(buttonFill); // 2-colors to start, rmember that nightMode adds choice
   rect(xbuttoncenter,ybuttoncenter,buttonheight,buttonwidth);
   fill(resetButtonColour);
